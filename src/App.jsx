@@ -3,6 +3,7 @@ import Home from "./components/pages/Home"
 import Company from "./components/pages/Company.jsx"
 import Contact from "./components/pages/Contact.jsx"
 import NewProject from "./components/pages/NewProject.jsx"
+import Container from "./components/layout/Container.jsx"
 function App() {
 
   return (
@@ -13,12 +14,15 @@ function App() {
         <Link to="/contact">Contacto</Link> |{" "}
         <Link to="/newproject">Novo Projecto</Link>
       </ul>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/company" element={<Company />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/newproject" element={<NewProject />} />
-      </Routes>
+      <Container customClass="min-height">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/company" element={<Company />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/newproject" element={<NewProject />} />
+        </Routes>
+      </Container>
+      
       <p>Footer</p>
     </Router>
   )
